@@ -21,15 +21,6 @@ import static java.util.stream.Collectors.toList;
 @Builder
 @AllArgsConstructor
 public class ArticleDto {
-    /**
-     * DTO for representing a tag item in view.
-     */
-    @Builder
-    static class TagDto {
-        private Long id;
-        private String name;
-        private String slug;
-    }
 
     private static final DateTimeFormatter DATE_FORMATTER =
             DateTimeFormatter.ofPattern("dd-MM-yyyy");
