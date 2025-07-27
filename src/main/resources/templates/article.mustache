@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" class="">
+<head>
+    {{>layout/meta}}
+    {{>layout/css_script}}
+    <meta property="og:title" content="{{article.title}}">
+    <meta property="og:description" content="{{article.excerpt}}">
+    <meta name="description" content="{{article.excerpt}}">
+    <title>{{article.title}}</title>
+</head>
+<body>
+<div class="container-fluid site-wrapper">
+    {{>layout/header}}
+    <div class="container-fluid content-wrapper" id="content">
+        <div class="container">
+            <div class="row-fluid content-inner">
+                <div id="left" class="span9">
+                    <div class="wrapper blog">
+                        <div class="content">
+                                <div class="section">
+                                    <div class="content">
+                                        <div class="avatar">
+                                            <i class="fa fa-pencil" title="{{article.title}}"></i>
+                                        </div>
+                                        <div class="item">
+                                            <div class="controls">
+                                                <span class="date-text">{{article.publishDate}}</span>
+                                            </div>
+                                            <div class="heading">
+                                                <h1 style="font-size: 1.5rem">{{article.title}}</h1>
+                                            </div>
+                                            <div class="tags">
+                                                {{#article.tags}}
+                                                    <span class="label label-info">{{name}}</span>
+                                                {{/article.tags}}
+                                            </div>
+                                            <div class="content">
+                                                <div class="img-simple span6 pull-left">
+                                                    <div class="image">
+                                                        <a rel="nofollow" data-ss="imagemodal" data-href="{{article.image}}">
+                                                            <img src="/images/{{article.image}}" alt="{{article.title}}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p>{{article.content}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <ul class="pager">
+                            <li><a rel="nofollow" href="/overview">Overview</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {{>layout/rightbar}}
+            </div>
+        </div>
+    </div>
+    {{>layout/footer}}
+</div>
+
+</body>
+</html>

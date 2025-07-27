@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .error-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .error-title {
+            font-size: 24px;
+            color: #d9534f;
+        }
+        .error-message {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="error-container">
+    <h1 class="error-title">An Error Occurred</h1>
+    <p class="error-message">{{message}}</p>
+    <p>Redirect after <span id="time">5</span> seconds</p>
+</div>
+<script>
+    let countdown = 5;
+    const timeElement = document.getElementById('time');
+    const interval = setInterval(() => {
+        countdown--;
+        timeElement.textContent = countdown;
+        if (countdown <= 0) {
+            clearInterval(interval);
+        }
+    }, 1000);
+    // redirect to the home page after 5 seconds
+    setTimeout(function() {
+        window.location.href = '/';
+    }, 5000);
+</script>
+</body>
+</html>

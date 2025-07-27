@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" class="">
+<head>
+    {{>layout/css_script}}
+    {{>layout/meta}}
+    <meta property="og:title" content="{{blogTitle}}">
+    <meta property="og:description" content="{{blogDescription}}">
+    <meta name="description" content="{{blogDescription}}">
+    <title>{{blogTitle}}</title>
+</head>
+<body>
+<div class="container-fluid site-wrapper">
+    {{>layout/header}}
+    <div class="container-fluid content-wrapper" id="content">
+        <div class="container">
+            <div class="row-fluid content-inner">
+                <div id="left" class="span9">
+                    <div class="wrapper blog">
+                        <div class="heading">
+                            <h1 class="page-title">My blog</h1>
+                        </div>
+                        <div class="content">
+                            {{#articles}}
+                            <div class="section">
+                                    <div class="content">
+                                        <div class="avatar">
+                                            <i class="fa fa-pencil" title="{{title}}"></i>
+                                        </div>
+                                        <div class="item">
+                                            <div class="controls">
+                                                <span class="date-text">{{publishDate}}</span>
+                                            </div>
+                                            <div class="heading">
+                                                <h4><a href="/articles/{{slug}}">{{title}}</a></h4>
+                                            </div>
+
+                                            <div class="content">
+                                                <div class="img-simple span6 pull-left">
+                                                    <div class="image">
+                                                        <a rel="nofollow" data-ss="imagemodal" data-href="{{image}}">
+                                                            <img src="/images/{{image}}" alt="{{title}}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p>{{excerpt}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            {{/articles}}
+                            <ul class="pager">
+                                <li><a  href="/overview">Overview</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{>layout/rightbar}}
+            </div>
+        </div>
+    </div>
+
+    {{>layout/footer}}
+</div>
+
+</body>
+</html>

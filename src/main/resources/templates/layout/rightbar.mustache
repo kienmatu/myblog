@@ -1,0 +1,50 @@
+<div id="right" class="span3">
+    <div class="sidebar">
+        <div class="wrapper share-box">
+            <div class="heading">
+                <h4>Share this page</h4>
+            </div>
+            <div class="content">
+            <span>
+               <ul>
+   {{#article}}
+       <li><a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{domain}}/articles/{{article.slug}}">
+         <i class="fa fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span></a>
+      </li>
+      <li><a id="share-twitter" href="https://twitter.com/intent/tweet?url={{domain}}/articles/{{article.slug}}">
+         <i class="fa fa-twitter-square" aria-hidden="true"></i><span>Share on Twitter</span></a>
+      </li>
+      <li><a id="share-google-plus" href="https://plus.google.com/share?url={{domain}}/articles/{{article.slug}}">
+         <i class="fa fa-google-plus-square" aria-hidden="true"></i><span>Share on Google+</span></a>
+      </li>
+   {{/article}}
+                   {{^article}}
+                       <li><a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{domain}}">
+         <i class="fa fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span></a>
+      </li>
+      <li><a id="share-twitter" href="https://twitter.com/intent/tweet?url={{domain}}">
+         <i class="fa fa-twitter-square" aria-hidden="true"></i><span>Share on Twitter</span></a>
+      </li>
+      <li><a id="share-google-plus" href="https://plus.google.com/share?url={{domain}}">
+         <i class="fa fa-google-plus-square" aria-hidden="true"></i><span>Share on Google+</span></a>
+      </li>
+                   {{/article}}
+</ul>
+            </span>
+            </div>
+        </div>
+        <div class="wrapper viral-box">
+            <div class="heading">
+                <h4>Create a website</h4>
+            </div>
+            <div class="content">
+                <p>Everybody can create a website, it's easy.</p>
+                <div class="bottom">
+                    <a rel="nofollow"
+                       href="http://www.simplesite.com/pages/receive.aspx?partnerkey=123i%3arightbanner&amp;referercustomerid=15831371&amp;refererpageid=422328564"
+                       class="btn btn-block">Try it for FREE now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

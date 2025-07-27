@@ -1,0 +1,84 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/main.css">
+<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap-2.3.2@1.0.0/css/bootstrap.min.css" rel="stylesheet">-->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>-->
+<script>
+    $(document).ready(function() {
+        // Handle the toggle button click
+        $(".btn-navbar").click(function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Stop the event from propagating
+
+            var target = $($(this).data("target"));
+
+            // Toggle the collapse state
+            if(target.hasClass("in")) {
+                target.removeClass("in").css("height", "0px");
+            } else {
+                target.addClass("in").css("height", "auto");
+            }
+
+            return false; // Additional measure to prevent default behavior
+        });
+
+        // Only close the menu when clicking outside navbar
+        $(document).click(function(e) {
+            // Check if the click was outside the navbar and the menu is open
+            if(!$(e.target).closest('.navbar').length && $(".nav-collapse").hasClass("in")) {
+                $(".nav-collapse").removeClass("in").css("height", "0px");
+            }
+        });
+
+        // Handle active state for menu items
+        $("#topMenu li a").click(function(e) {
+            // Don't stop propagation here as we want the document click handler to work
+            $("#topMenu li").removeClass("active");
+            $(this).parent().addClass("active");
+        });
+
+        // Prevent clicks inside the menu from closing it
+        $(".nav-collapse").click(function(e) {
+            e.stopPropagation();
+        });
+    });
+</script>
+<style>
+    .avatar {
+        display: flex;
+        justify-content: center;
+        height: 100px; /* Adjust as needed */
+        width: 100px; /* Adjust as needed */
+    }
+
+    .avatar i {
+        font-size: 2rem; /* Adjust size as needed */
+        line-height: 1; /* Ensures proper alignment */
+    }
+    h1>a, h2>a, h3>a, h4>a, h5>a, h6>a {
+        display: inline-block;
+        color: #000;
+         text-decoration: none !important;
+    }
+    .label-info, .badge-info {
+        background-color: #3a87ad;
+    }
+
+    .label {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .label, .badge {
+        display: inline-block;
+        padding: 2px 4px;
+        font-size: 11.844px;
+        font-weight: bold;
+        line-height: 14px;
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        white-space: nowrap;
+        vertical-align: baseline;
+    }
+</style>

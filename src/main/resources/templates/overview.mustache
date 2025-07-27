@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US" class="">
+<head>
+    {{>layout/css_script}}
+    {{>layout/meta}}
+    <meta property="og:title" content="{{blogTitle}}">
+    <meta property="og:description" content="{{blogDescription}}">
+    <meta name="description" content="{{blogDescription}}">
+    <title>{{blogTitle}}</title>
+</head>
+<body>
+<div class="container-fluid site-wrapper">
+    {{>layout/header}}
+    <div class="container-fluid content-wrapper" id="content">
+        <div class="container">
+            <div class="row-fluid content-inner">
+                <div id="left" class="span9">
+                    <div class="wrapper blog">
+                        <div class="heading">
+                            <h1 class="page-title">Overview - My blog</h1>
+                        </div>
+                        <div class="content overview-content">
+                            {{#groupedArticles}}
+                                <div class="month-group">
+                                    <h4>{{month}}</h4>
+                                    <ul>
+                                        {{#articles}}
+                                            <li class="article-item">
+                                                <a href="articles/{{slug}}">
+                                                    <span class="article-title">{{title}}</span>
+                                                </a>
+                                                <span class="article-date">{{publishDate}}</span>
+                                            </li>
+                                        {{/articles}}
+                                    </ul>
+                                </div>
+                            {{/groupedArticles}}
+                        </div>
+                    </div>
+                </div>
+                {{>layout/rightbar}}
+            </div>
+        </div>
+    </div>
+
+    {{>layout/footer}}
+</div>
+<style>
+    /* Style for the month (h4) */
+    .overview-content .month-group h4 {
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+    }
+
+    .overview-content .month-group h4::after {
+        content: "DATE";
+        text-transform: uppercase;
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    /* Style for the list items */
+    .overview-content .month-group ul {
+        list-style: none; /* Remove the dot */
+        padding: 0;
+        margin: 0;
+    }
+
+    .overview-content .month-group ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd; /* Divider between items */
+    }
+
+    .overview-content .month-group ul li a {
+        text-decoration: underline; /* Add underline */
+        color: #000;
+        flex-grow: 1; /* Align link to the left */
+    }
+
+    .overview-content .month-group ul li .article-date {
+        text-align: right; /* Align date to the right */
+        color: #666;
+        font-size: 0.9em;
+    }
+</style>
+</body>
+</html>
