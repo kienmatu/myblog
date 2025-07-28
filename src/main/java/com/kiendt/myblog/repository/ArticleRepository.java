@@ -13,6 +13,7 @@ import java.util.Optional;
 /**
  * Repository interface for managing articles.
  * This interface extends JpaRepository to provide CRUD operations and custom queries.
+ * Readme: <a href="https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html">...</a>
  */
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Long> {
